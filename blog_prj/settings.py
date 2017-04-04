@@ -144,7 +144,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 
-DISQUS_WEBSITE_SHORTNAME = 'richardciblog'
+DISQUS_WEBSITE_SHORTNAME =  os.environ.get("DISQUS_SHORTNAME")
 SITE_ID = 1
 
 AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
