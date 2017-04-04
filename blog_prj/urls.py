@@ -17,12 +17,14 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from blog.views import post_list
 from django.conf import settings
+from accounts import urls as accounts_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/', include('accounts.urls')),
     url(r'^$', post_list, name='index'),
     url(r'', include('blog.urls')),
+    url(r'^accounts/', include(accounts_urls)),
+    url(r'^user/', include(accounts_urls)),
 ]
 
 if settings.DEBUG:
